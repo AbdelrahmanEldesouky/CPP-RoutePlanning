@@ -29,14 +29,11 @@ static std::optional<std::vector<std::byte>> ReadFile(const std::string &path)
 
 float InputValue(const std::string & str)
 {
-    float value;
+    float value = 0.0;
     std::cout << "Range of: " << str << " is [0.0, 100.0]" << std::endl;
 
-    do
-    {
-        std::cout << "Please enter: " << str;
-        std::cin >> value;
-    } while (value < 0.0 || value > 100.0);
+    std::cout << "Please enter " << str << ": ";
+    std::cin >> value;
     
     return value;
 }
